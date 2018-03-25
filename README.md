@@ -2,7 +2,7 @@
 Simple Crypt
 
 ## About
-**Simple Crypt**(scrypt) is a small cli tool that encrypts/decrypts text content using some classic cipher algorithms such as Caesar, Viginere and Vernam Cipher.
+**Simple Crypt**(scrypt) is a small cli tool that encrypts/decrypts text content using some classic cipher algorithms such as Caesar, Viginère and Vernam Cipher.
 
 ## Installation
 **scrypt** requires no third-party dependencies. You can get the lastest version by clonning this repository:
