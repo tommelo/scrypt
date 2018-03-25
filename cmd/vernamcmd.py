@@ -24,10 +24,8 @@
 # vim: fileencoding=utf-8 tabstop=4 expandtab shiftwidth=4
 # pylint: disable=C0103,C0301,W1202,W0212
 
-import sys
 from command import Command
 from ciphers.vernamcipher import VernamCipher
-from utils.ioutils import IOUtils
 
 class VernamCommand(Command):
     """
