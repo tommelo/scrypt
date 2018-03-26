@@ -2,7 +2,7 @@
 Simple Crypt
 
 ## About
-**Simple Crypt**(scrypt) is a small cli tool that encrypts/decrypts text content using some classic cipher algorithms such as Caesar, Viginère and Vernam Cipher.
+**Simple Crypt**(scrypt) is a small cli tool that encrypts/decrypts text content using some classic cipher algorithms such as Caesar, Vigenère and Vernam Cipher.
 
 ## Installation
 **scrypt** requires no third-party dependencies. You can get the lastest version by clonning this repository:
@@ -23,7 +23,7 @@ See the options overview:
 
 Short opt | Long opt | Default | Required | Description
 --------- | -------- | ------- | -------- | -----------
--c        | --cipher      | None    | Yes | the cipher(caesar, viginere or vernam)
+-c        | --cipher      | None    | Yes | the cipher(caesar, vigenere or vernam)
 -d        | --decrypt     | None    | No  | decrypts the given content
 -e        | --encrypt     | None    | No  | encrypts the given content
 -h        | --help        | None    | No  | shows the help usage
@@ -112,17 +112,17 @@ python scrypt.py -c vernam --key '$uperS3cretKey' -e -o encrypted_text.txt "The 
 python scrypt.py -c vernam --key '$uperS3cretKey' -d -i encrypted_text.txt
 ```
 
-## Viginère Cipher
+## Vigenère Cipher
 
-Encrypting text with the Viginère Cipher Algorithm:
+Encrypting text with the Vigenère Cipher Algorithm:
 ```shell
-python scrypt.py -c viginere --key '$uperS3cretKey' -e "The quick brown fox jumps over the lazy dog"
+python scrypt.py -c vigenere --key '$uperS3cretKey' -e "The quick brown fox jumps over the lazy dog"
 
 X^VedI|G^eW>UqruWUkS}Y`VhKUpihpZ[93PT`nKJik
 ```
 
 ```shell
-python scrypt.py -c viginere --key '$uperS3cretKey' -d 'X^VedI|G^eW>UqruWUkS}Y`VhKUpihpZ[93PT`nKJik'
+python scrypt.py -c vigenere --key '$uperS3cretKey' -d 'X^VedI|G^eW>UqruWUkS}Y`VhKUpihpZ[93PT`nKJik'
 
 The quick brown fox jumps over the lazy dog
 ```
@@ -131,14 +131,14 @@ The quick brown fox jumps over the lazy dog
 
 You can pipe any content to be encrypted/decrypted
 ```shell
-echo 'X^VedI|G^eW>UqruWUkS}Y`VhKUpihpZ[93PT`nKJik' | python scrypt.py -c viginere -d --key '$uperS3cretKey'
+echo 'X^VedI|G^eW>UqruWUkS}Y`VhKUpihpZ[93PT`nKJik' | python scrypt.py -c vigenere -d --key '$uperS3cretKey'
 ```
 
 ## Piped Output
 
 The output can also be piped:
 ```shell
-python scrypt.py -c viginere -d --key '$uperS3cretKey' 'X^VedI|G^eW>UqruWUkS}Y`VhKUpihpZ[93PT`nKJik' > decoded_file.txt
+python scrypt.py -c vigenere -d --key '$uperS3cretKey' 'X^VedI|G^eW>UqruWUkS}Y`VhKUpihpZ[93PT`nKJik' > decoded_file.txt
 ```
 
 ## License
