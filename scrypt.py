@@ -28,7 +28,7 @@
 """
 Simple Crypt
 This is a small cli tool that implements the classical cipher 
-algorithms such as Caesar, Viginere and Vernam.
+algorithms such as Caesar, Vigenere and Vernam.
 """
 
 import sys
@@ -53,7 +53,7 @@ parser.add_argument(
     "-c",
     "--cipher",
     metavar="",
-    help="the cipher(caesar, viginere or vernam)"
+    help="the cipher(caesar, vigenere or vernam)"
 )
 
 parser.add_argument(

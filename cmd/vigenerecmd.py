@@ -25,13 +25,13 @@
 # pylint: disable=C0103,C0301,W1202,W0212
 
 from command import Command
-from ciphers.viginerecipher import ViginereCipher
+from ciphers.vigenerecipher import VigenereCipher
 
-class ViginereCommand(Command):
+class VigenereCommand(Command):
     """
-    The ViginereCommand class.
+    The VigenereCommand class.
 
-    This class handles the option -c, --cipher viginere
+    This class handles the option -c, --cipher vigenere
     It contains the handlers for the operations:
     -e, --encrypt
     -d, --decrypt
@@ -43,7 +43,7 @@ class ViginereCommand(Command):
             "decrypt": self.__decrypt
         })
 
-        self.cipher = ViginereCipher()
+        self.cipher = VigenereCipher()
 
     def __encrypt(self, kwargs):
         """

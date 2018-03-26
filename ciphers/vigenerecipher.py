@@ -24,12 +24,12 @@
 # vim: fileencoding=utf-8 tabstop=4 expandtab shiftwidth=4
 # pylint: disable=C0103,C0301,W1202,W0212
 
-class ViginereCipher(object):
+class VigenereCipher(object):
     """
-    The ViginereCipher class.
+    The VigenereCipher class.
 
     This class contains the encrypt and decrypt 
-    implementation of the Viginere's Cipher algorithm.
+    implementation of the Vigenere's Cipher algorithm.
     """
 
     ASCII_CHARS = [c for c in (chr(i) for i in xrange(32, 127))]

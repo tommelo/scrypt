@@ -26,7 +26,7 @@
 
 from caesarcmd import CaesarCommand
 from vernamcmd import VernamCommand
-from viginerecmd import ViginereCommand
+from vigenerecmd import VigenereCommand
 
 class CommandStrategy(object):
     """
@@ -37,13 +37,13 @@ class CommandStrategy(object):
 
     Currently, the supported ciphers are:
     * caesar
-    * viginere
+    * vigenere
     * vernam
     """
 
     COMMANDS = {
         "caesar": CaesarCommand(),
-        "viginere": ViginereCommand(),
+        "vigenere": VigenereCommand(),
         "vernam": VernamCommand()
     }
 
