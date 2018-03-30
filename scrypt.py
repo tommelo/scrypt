@@ -107,6 +107,18 @@ parser.add_argument(
 )
 
 parser.add_argument(
+    "--enc-hex",
+    action="store_true",
+    help="Vernam cipher hex encryption"
+)
+
+parser.add_argument(
+    "--dec-hex",
+    action="store_true",
+    help="Vernam cipher hex decryption"
+)
+
+parser.add_argument(
     "--version",
     action="version",
     version="v1.0.0"

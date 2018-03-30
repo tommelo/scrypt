@@ -35,12 +35,16 @@ class VernamCommand(Command):
     It contains the handlers for the operations:
     -e, --encrypt
     -d, --decrypt
+    --enc-hex
+    --dec-hex
     """
 
     def __init__(self):
         Command.__init__(self, {
             "encrypt": self.__encrypt,
-            "decrypt": self.__decrypt
+            "enc_hex": self.__enc_hex,
+            "decrypt": self.__decrypt,
+            "dec_hex": self.__decrypt_hex
         })
 
         self.cipher = VernamCipher()
@@ -59,10 +63,29 @@ class VernamCommand(Command):
         Returns
         -------
         result: str
-            The encryted content
+            The encrypted content
         """
 
         return self.cipher.encrypt(kwargs["text"], kwargs["key"])
+
+    def __enc_hex(self, kwargs):
+        """
+        Handles the operation --enc-hex
+
+        Parameters
+        ----------
+        kwargs: dict
+            The dictionary parameter containing the attributes:
+            * text - The content to be encrypted
+            * key - The encryption key
+        
+        Returns
+        -------
+        result: str
+            The hex encrypted content
+        """
+
+        return self.cipher.encrypt_hex(kwargs["text"], kwargs["key"])
 
     def __decrypt(self, kwargs):
         """
@@ -78,11 +101,30 @@ class VernamCommand(Command):
         Returns
         -------
         result: str
-            The decryted content
+            The decrypted content
         """
 
         return self.cipher.decrypt(kwargs["text"], kwargs["key"])
     
+    def __decrypt_hex(self, kwargs):
+        """
+        Handles the operation --dec-hex
+
+        Parameters
+        ----------
+        kwargs: dict
+            The dictionary parameter containing the attributes:
+            * text - The content to be decrypted
+            * key - The encryption key
+        
+        Returns
+        -------
+        result: str
+            The hex decrypted content
+        """
+
+        return self.cipher.decrypt_hex(kwargs["text"], kwargs["key"])
+
     def execute(self, args):
         """
         The abstract execute method implementation.

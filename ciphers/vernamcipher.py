@@ -24,6 +24,8 @@
 # vim: fileencoding=utf-8 tabstop=4 expandtab shiftwidth=4
 # pylint: disable=C0103,C0301,W1202,W0212
 
+import binascii
+
 class VernamCipher(object):
     """
     The VernamCipher class.
@@ -80,6 +82,26 @@ class VernamCipher(object):
 
         return self.__cipher(text, key)
 
+    def encrypt_hex(self, text, key):
+        """
+        Encrypts the given content.
+
+        Parameters
+        ----------
+        text: str
+            The text content to encrypt
+        key: str
+            The encryption key
+
+        Returns
+        -------
+        result: str
+            The hex encrypted content        
+        """
+
+        encrypted = self.__cipher(text, key)
+        return binascii.hexlify(encrypted)
+
     def decrypt(self, text, key):
         """
         Decrypts the given content.
@@ -98,3 +120,22 @@ class VernamCipher(object):
         """
 
         return self.__cipher(text, key)
+
+    def decrypt_hex(self, text, key):
+        """
+        Decrypts the given content.
+
+        Parameters
+        ----------
+        text: str
+            The text content to decrypt
+        key: str
+            The encryption key
+
+        Returns
+        -------
+        result: str
+            The decrypted content        
+        """
+        unhex = binascii.unhexlify(text)
+        return self.__cipher(unhex, key)
