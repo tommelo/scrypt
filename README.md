@@ -32,6 +32,8 @@ Short opt | Long opt | Default | Required | Description
 -o        | --output      | None    | No  | the output file
 N/A       | --rot         | 13      | No  | the Caesar cipher offset to rotate
 N/A       | --brute-force | False   | No  | Caesar cipher brute force mode
+N/A       | --enc-hex     | False   | No  | Vernam cipher hex encryption
+N/A       | --dec-hex     | False   | No  | Vernam cipher hex decryption
 N/A       | --version     | None    | No  | shows the application's current version
 
 ## Caesar Cipher
@@ -110,6 +112,19 @@ python scrypt.py -c vernam --key '$uperS3cretKey' -e -o encrypted_text.txt "The 
 
 ```shell
 python scrypt.py -c vernam --key '$uperS3cretKey' -d -i encrypted_text.txt
+```
+Hex input/output:
+
+```shell
+python scrypt.py -c vernam --key '$uperS3cretKey' --enc-hex "The quick brown fox jumps over the lazy dog" 
+
+701d154503265a00194516390a0e4a55160a0a7359161f15076b0a0f410750111a36130f131f0d6b011643
+```
+
+```shell
+python scrypt.py -c vernam --key '$uperS3cretKey' --dec-hex "701d154503265a00194516390a0e4a55160a0a7359161f15076b0a0f410750111a36130f131f0d6b011643"
+
+The quick brown fox jumps over the lazy dog
 ```
 
 ## Vigenère Cipher
